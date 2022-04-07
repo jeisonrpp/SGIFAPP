@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
+using System.Drawing.Printing;
 
 namespace SGPAPP
 {
@@ -399,6 +400,22 @@ namespace SGPAPP
                             Ventas();
                             MessageBox.Show("Facturacion concluida de manera satisfactoria!", "Facturacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Limpiar();
+
+                            printDocument1 = new PrintDocument();
+                            PrinterSettings ps = new PrinterSettings();
+                            printDocument1.PrinterSettings = ps;
+                            printDocument1.PrintPage += Imprimir;
+                            ps.PrinterName = "LR2000";
+                            printDocument1.Print();
+
+
+                            string GS = Convert.ToString((char)29);
+                            string ESC = Convert.ToString((char)27);
+
+                            string COMMAND = "";
+                            COMMAND = ESC + "@";
+                            COMMAND += GS + "V" + (char)1;
+                            RawPrinterHelper.SendStringToPrinter(ps.PrinterName = "LR2000", COMMAND);
                         }
                         catch (Exception ex)
                         {
@@ -412,6 +429,25 @@ namespace SGPAPP
                 MessageBox.Show("Debe agregar articulos para poder facturar!","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+        public void Imprimir(object sender, PrintPageEventArgs e)
+        {
+            //String imagen = Environment.CurrentDirectory + @"\\resourses\VPNLogo.png";
+            //System.Drawing.Image img = System.Drawing.Image.FromFile(imagen);
+            //e.Graphics.DrawImage(img, new System.Drawing.Rectangle(20, 20, 206, 103));
+            //System.Drawing.Font font = new System.Drawing.Font("Calibri", 12, FontStyle.Bold, GraphicsUnit.Point);
+            //e.Graphics.DrawString("CREDENCIALES CONSULTA", font, Brushes.Black, new RectangleF(40, 130, 200, 80));
+            //e.Graphics.DrawString("RESULTADOS", font, Brushes.Black, new RectangleF(85, 150, 200, 80));
+            //System.Drawing.Font font1 = new System.Drawing.Font("Calibri", 12, FontStyle.Regular, GraphicsUnit.Point);
+            //System.Drawing.Font font2 = new System.Drawing.Font("Calibri", 12, FontStyle.Bold, GraphicsUnit.Point);
+            //e.Graphics.DrawString("Paciente: " + txtNom.Text, font1, Brushes.Black, new RectangleF(30, 190, 300, 80));
+            //e.Graphics.DrawString("Usuario: " + Cedula, font2, Brushes.Black, new RectangleF(40, 250, 200, 80));
+            //e.Graphics.DrawString("Contraseña: " + contraseniaAleatoria, font2, Brushes.Black, new RectangleF(40, 280, 200, 80));
+            //e.Graphics.DrawString("www.cgelaboratorio.com", font1, Brushes.Black, new RectangleF(40, 350, 200, 80));
+
+        }
+
         public void Facturar()
         {
             int Cant = 0;

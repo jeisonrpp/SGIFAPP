@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,13 +34,32 @@ namespace SGPAPP
 
         private void radGridView1_CommandCellClick(object sender, GridViewCellEventArgs e)
         {
+            GridViewRowInfo row = radGridView1.CurrentRow;
             if (Consulta == "Facturacion")
             {
-                GetDataFact();
+                print.FactCod = e.Row.Cells[0].Value.ToString();
+                printDocument1 = new PrintDocument();
+                PrinterSettings ps = new PrinterSettings();
+                printDocument1.PrinterSettings = ps;
+                printDocument1.PrintPage += print.Imprimir;
+                //ps.PrinterName = "Nitro PDF Creator";
+                ps.PrinterName = "80mm Series Printer";
+                printDocument1.Print();
+
+
+                string GS = Convert.ToString((char)29);
+                string ESC = Convert.ToString((char)27);
+
+                string COMMAND = "";
+                COMMAND = ESC + "@";
+                COMMAND += GS + "V" + (char)1;
+                RawPrinterHelper.SendStringToPrinter(ps.PrinterName = "LR2000", COMMAND);
+
+               // GetDataFact();
             }
             if (Consulta == "Caja")
             {
-                GridViewRowInfo row = radGridView1.CurrentRow;
+                
                 frmConsultaGenerica congen = new frmConsultaGenerica();
                 congen.Consulta = "Facturacion";
                 congen.Parametro = e.Row.Cells[0].Value.ToString();
@@ -49,13 +69,16 @@ namespace SGPAPP
            
         }
 
+     
+
         static string conect = ConfigurationManager.ConnectionStrings["Connection"].ToString();
         SqlCommand cmd = null;
         public String Consulta;
         public String Parametro="";
-
+        clsPrintFact print = new clsPrintFact();
         private void frmConsultaGenerica_Load(object sender, EventArgs e)
         {
+            Consulta = "Facturacion";
             if (Consulta == "Facturacion")
             {
                 this.Text = "Consulta Facturacion";

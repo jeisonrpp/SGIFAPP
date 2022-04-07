@@ -30,12 +30,12 @@ namespace SGPAPP
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFacturacion));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radScrollablePanel1 = new Telerik.WinControls.UI.RadScrollablePanel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.radScrollablePanel3 = new Telerik.WinControls.UI.RadScrollablePanel();
@@ -85,6 +85,7 @@ namespace SGPAPP
             this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.radScrollablePanel1)).BeginInit();
             this.radScrollablePanel1.PanelContainer.SuspendLayout();
             this.radScrollablePanel1.SuspendLayout();
@@ -812,25 +813,25 @@ namespace SGPAPP
             this.radGridView1.MasterTemplate.AllowAddNewRow = false;
             this.radGridView1.MasterTemplate.AllowDeleteRow = false;
             this.radGridView1.MasterTemplate.AllowEditRow = false;
-            gridViewTextBoxColumn1.HeaderText = "Codigo";
-            gridViewTextBoxColumn1.Name = "Codigo";
-            gridViewTextBoxColumn2.HeaderText = "Descripcion";
-            gridViewTextBoxColumn2.Name = "Descripcion";
-            gridViewTextBoxColumn3.HeaderText = "Cant.";
-            gridViewTextBoxColumn3.Name = "Cant";
-            gridViewTextBoxColumn4.HeaderText = "Precio Unit.";
-            gridViewTextBoxColumn4.Name = "Precio Unit";
-            gridViewTextBoxColumn5.HeaderText = "Importe";
-            gridViewTextBoxColumn5.Name = "Importe";
+            gridViewTextBoxColumn11.HeaderText = "Codigo";
+            gridViewTextBoxColumn11.Name = "Codigo";
+            gridViewTextBoxColumn12.HeaderText = "Descripcion";
+            gridViewTextBoxColumn12.Name = "Descripcion";
+            gridViewTextBoxColumn13.HeaderText = "Cant.";
+            gridViewTextBoxColumn13.Name = "Cant";
+            gridViewTextBoxColumn14.HeaderText = "Precio Unit.";
+            gridViewTextBoxColumn14.Name = "Precio Unit";
+            gridViewTextBoxColumn15.HeaderText = "Importe";
+            gridViewTextBoxColumn15.Name = "Importe";
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5});
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewTextBoxColumn15});
             this.radGridView1.MasterTemplate.EnableFiltering = true;
             this.radGridView1.MasterTemplate.EnableGrouping = false;
-            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition3;
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.Size = new System.Drawing.Size(588, 253);
             this.radGridView1.TabIndex = 147;
@@ -948,5 +949,6 @@ namespace SGPAPP
         public System.Windows.Forms.TextBox lblPendiente;
         public System.Windows.Forms.TextBox lblDescuento;
         public System.Windows.Forms.TextBox lblSubt;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

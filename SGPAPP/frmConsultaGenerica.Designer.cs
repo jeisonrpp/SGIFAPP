@@ -35,6 +35,7 @@ namespace SGPAPP
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.txtConsulta = new System.Windows.Forms.TextBox();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.radScrollablePanel1)).BeginInit();
             this.radScrollablePanel1.PanelContainer.SuspendLayout();
             this.radScrollablePanel1.SuspendLayout();
@@ -136,5 +137,6 @@ namespace SGPAPP
         private Telerik.WinControls.UI.RadButton radButton1;
         private Telerik.WinControls.UI.RadGridView radGridView1;
         public System.Windows.Forms.TextBox txtConsulta;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
