@@ -57,6 +57,7 @@ namespace SGPAPP
         String FacturaID;
         SqlCommand cmd = null;
         String Sql;
+        clsPrintFact print = new clsPrintFact();
         private void radScrollablePanel3_Click(object sender, EventArgs e)
         {
 
@@ -398,14 +399,16 @@ namespace SGPAPP
                             GetID();
                             Facturar();
                             Ventas();
-                            MessageBox.Show("Facturacion concluida de manera satisfactoria!", "Facturacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Limpiar();
-
+                            clsPrinterSet printerset = new clsPrinterSet();
+                            print.GetPrinter();
+                            String Printer = printerset.Printer;
+                            print.FactCod = FacturaID;
                             printDocument1 = new PrintDocument();
                             PrinterSettings ps = new PrinterSettings();
                             printDocument1.PrinterSettings = ps;
-                            printDocument1.PrintPage += Imprimir;
-                            ps.PrinterName = "LR2000";
+                            printDocument1.PrintPage += print.Imprimir;
+                            //ps.PrinterName = "Nitro PDF Creator";
+                            ps.PrinterName = Printer;
                             printDocument1.Print();
 
 
@@ -415,7 +418,12 @@ namespace SGPAPP
                             string COMMAND = "";
                             COMMAND = ESC + "@";
                             COMMAND += GS + "V" + (char)1;
-                            RawPrinterHelper.SendStringToPrinter(ps.PrinterName = "LR2000", COMMAND);
+                            //RawPrinterHelper.SendStringToPrinter(ps.PrinterName = Printer, COMMAND);
+
+                            MessageBox.Show("Facturacion concluida de manera satisfactoria!", "Facturacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            Limpiar();
+                         
                         }
                         catch (Exception ex)
                         {

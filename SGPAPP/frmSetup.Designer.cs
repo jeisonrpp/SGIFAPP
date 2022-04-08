@@ -34,6 +34,7 @@ namespace SGPAPP
             this.button1 = new System.Windows.Forms.Button();
             this.btnPacient = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,9 +48,10 @@ namespace SGPAPP
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnPacient);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Location = new System.Drawing.Point(232, 215);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(328, 100);
+            this.panel1.Size = new System.Drawing.Size(328, 148);
             this.panel1.TabIndex = 1;
             // 
             // button1
@@ -62,7 +64,7 @@ namespace SGPAPP
             this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Gainsboro;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 52);
+            this.button1.Location = new System.Drawing.Point(0, 101);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(324, 45);
@@ -109,6 +111,26 @@ namespace SGPAPP
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 52);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(326, 45);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Configuracion Impresora";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // frmSetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,5 +152,6 @@ namespace SGPAPP
         internal System.Windows.Forms.Button btnPacient;
         internal System.Windows.Forms.Button button1;
         internal System.Windows.Forms.Button button6;
+        internal System.Windows.Forms.Button button2;
     }
 }

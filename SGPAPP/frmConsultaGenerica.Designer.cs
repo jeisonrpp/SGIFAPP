@@ -29,9 +29,10 @@ namespace SGPAPP
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaGenerica));
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radScrollablePanel1 = new Telerik.WinControls.UI.RadScrollablePanel();
+            this.btnAnular = new Telerik.WinControls.UI.RadButton();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.txtConsulta = new System.Windows.Forms.TextBox();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
@@ -39,6 +40,7 @@ namespace SGPAPP
             ((System.ComponentModel.ISupportInitialize)(this.radScrollablePanel1)).BeginInit();
             this.radScrollablePanel1.PanelContainer.SuspendLayout();
             this.radScrollablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAnular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
@@ -55,12 +57,27 @@ namespace SGPAPP
             // 
             // radScrollablePanel1.PanelContainer
             // 
+            this.radScrollablePanel1.PanelContainer.Controls.Add(this.btnAnular);
             this.radScrollablePanel1.PanelContainer.Controls.Add(this.radGridView1);
             this.radScrollablePanel1.PanelContainer.Controls.Add(this.txtConsulta);
             this.radScrollablePanel1.PanelContainer.Controls.Add(this.radButton1);
             this.radScrollablePanel1.PanelContainer.Size = new System.Drawing.Size(879, 506);
             this.radScrollablePanel1.Size = new System.Drawing.Size(881, 508);
             this.radScrollablePanel1.TabIndex = 2;
+            // 
+            // btnAnular
+            // 
+            this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
+            this.btnAnular.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAnular.Location = new System.Drawing.Point(322, 22);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(58, 51);
+            this.btnAnular.TabIndex = 3;
+            this.btnAnular.Text = "Anular";
+            this.btnAnular.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAnular.ThemeName = "Office2013Light";
+            this.btnAnular.Visible = false;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
             // radGridView1
             // 
@@ -75,7 +92,7 @@ namespace SGPAPP
             this.radGridView1.MasterTemplate.AllowDeleteRow = false;
             this.radGridView1.MasterTemplate.AllowEditRow = false;
             this.radGridView1.MasterTemplate.EnableFiltering = true;
-            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.Size = new System.Drawing.Size(849, 416);
             this.radGridView1.TabIndex = 133;
@@ -124,6 +141,7 @@ namespace SGPAPP
             this.radScrollablePanel1.PanelContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radScrollablePanel1)).EndInit();
             this.radScrollablePanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnAnular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
@@ -138,5 +156,6 @@ namespace SGPAPP
         private Telerik.WinControls.UI.RadGridView radGridView1;
         public System.Windows.Forms.TextBox txtConsulta;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private Telerik.WinControls.UI.RadButton btnAnular;
     }
 }

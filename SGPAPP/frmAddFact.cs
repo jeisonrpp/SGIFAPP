@@ -69,6 +69,7 @@ namespace SGPAPP
                     else
                     {
                         MessageBox.Show("No se ha encontrado este producto!");
+                        this.Close();
                     }
                 }
                 catch (Exception ex)

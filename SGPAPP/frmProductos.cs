@@ -85,8 +85,85 @@ namespace SGPAPP
                             con.Close();
                             Fechadehoy();
                             GuardaProductos();
+          
                         }
                     }
+                }
+            }
+        }
+
+        public void GuardarMarca()
+        {
+            using (var con = new SqlConnection(conect))
+            {
+                con.Open();
+                string ct = "select mmarcas from tbmarcas where mmarcas = '" + cbbMarca.Text + "'";
+
+                cmd = new SqlCommand(ct);
+                cmd.Connection = con;
+                rdr = cmd.ExecuteReader();
+                
+                if ((rdr.Read() == false))
+                {
+                    con.Close();
+                    string Sql2 = "insert into tbmarcas(mmarcas) values ('" + cbbMarca.Text + "')";
+                    cmd = new SqlCommand(Sql2, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    int i = cmd.ExecuteNonQuery();
+                    con.Close();
+                    
+                }
+            }
+        }
+        public void GuardarModelo()
+        {
+            using (var con = new SqlConnection(conect))
+            {
+                con.Open();
+                string ct = "select momodelo from tbmodelos where mmarcas = '" + cbbMarca.Text + "' and momodelo ='"+cbbModelo.Text+"' ";
+
+                cmd = new SqlCommand(ct);
+                cmd.Connection = con;
+                rdr = cmd.ExecuteReader();
+              
+                if ((rdr.Read() == false))
+                {
+                    con.Close();
+                    string Sql2 = "insert into tbmodelos(mmarcas, momodelo) values ('" + cbbMarca.Text + "', '" + cbbModelo.Text + "')";
+                    cmd = new SqlCommand(Sql2, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    int i = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                }
+            }
+        }
+        public void GuardarCategorias()
+        {
+            using (var con = new SqlConnection(conect))
+            {
+                con.Open();
+                string ct = "select catcategoria from tbCategorias where catcategoria = '" + cbbCategoria.Text + "' ";
+
+                cmd = new SqlCommand(ct);
+                cmd.Connection = con;
+                rdr = cmd.ExecuteReader();
+              
+                if ((rdr.Read() == false))
+                {
+                    con.Close();
+                    string Sql2 = "insert into tbcategorias(catcategoria) values ('" + cbbCategoria.Text + "')";
+                    cmd = new SqlCommand(Sql2, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    int i = cmd.ExecuteNonQuery();
+                    con.Close();
+
                 }
             }
         }
@@ -208,7 +285,10 @@ namespace SGPAPP
                     finally
                     {
                         con.Close();
-                        MessageBox.Show("Producto Guardado Correctamente", "Guardado Satisfactorio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GuardarCategorias();
+                    GuardarMarca();
+                    GuardarModelo();
+                    MessageBox.Show("Producto Guardado Correctamente", "Guardado Satisfactorio", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Logs log = new Logs();
                         log.Accion = "Producto: " + txtCod.Text + " Guardado";
                         log.Form = "Registro de Productos";

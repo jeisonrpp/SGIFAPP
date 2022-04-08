@@ -34,6 +34,29 @@ namespace SGPAPP
         String Cantidadf;
         String PrecioVentaf;
         String Descuentosf;
+        public void GetPrinter()
+        {
+            using (var con = new SqlConnection(conect))
+            {
+                con.Open();
+
+                using (SqlCommand comand = new SqlCommand("SELECT * from tbprinter where print_host = '" + Environment.MachineName + "'", con))
+                {
+
+
+                    using (SqlDataReader leer = comand.ExecuteReader())
+                    {
+                        while (leer.Read() == true)
+                        {
+                            clsPrinterSet item = new clsPrinterSet();
+                            item.Printer = leer.GetString(1);
+                            item.Hostname = leer.GetString(2);
+                        }
+                    }
+                }
+                con.Close();
+            }
+        }
         public void Imprimir(object sender, PrintPageEventArgs e)
         {
             Factura.Clear();
@@ -131,7 +154,7 @@ namespace SGPAPP
             RowS = RowS + 5;
             e.Graphics.DrawString("_________________________________", font1, Brushes.Black, new RectangleF(10, RowS, 250, 80));
             RowS = RowS + 25;
-            e.Graphics.DrawString("Subtotal:         " + Importef, font2, Brushes.Black, new RectangleF(10, RowS, 300, 80));
+            e.Graphics.DrawString("Subtotal:               " + Importef, font2, Brushes.Black, new RectangleF(10, RowS, 300, 80));
             if (MontoDescuentof != "RD$0.00")
             {
                 RowS = RowS + 25;

@@ -114,5 +114,11 @@ namespace SGPAPP
         {
             this.Close();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            frmPrinter prt = new frmPrinter();
+            prt.ShowDialog();
+        }
     }
 }

@@ -174,6 +174,7 @@
     <Compile Include="clsEncrypt.cs" />
     <Compile Include="clsFactura.cs" />
     <Compile Include="clsMail.cs" />
+    <Compile Include="clsPrinterSet.cs" />
     <Compile Include="clsPrintFact.cs" />
     <Compile Include="clsRandomNo.cs" />
     <Compile Include="clsVentas.cs" />
@@ -284,6 +285,12 @@
     </Compile>
     <Compile Include="frmPlantilla.Designer.cs">
       <DependentUpon>frmPlantilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrinter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrinter.Designer.cs">
+      <DependentUpon>frmPrinter.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProductos.cs">
       <SubType>Form</SubType>
@@ -400,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlantilla.resx">
       <DependentUpon>frmPlantilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrinter.resx">
+      <DependentUpon>frmPrinter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>

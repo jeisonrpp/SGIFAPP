@@ -16,7 +16,7 @@ namespace SGPAPP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmConsultaGenerica());
+            Application.Run(new FormLogin());
         }
     }
 }

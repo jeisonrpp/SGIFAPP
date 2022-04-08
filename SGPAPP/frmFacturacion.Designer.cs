@@ -29,13 +29,13 @@ namespace SGPAPP
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFacturacion));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radScrollablePanel1 = new Telerik.WinControls.UI.RadScrollablePanel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.radScrollablePanel3 = new Telerik.WinControls.UI.RadScrollablePanel();
@@ -66,7 +66,6 @@ namespace SGPAPP
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.radLabel17 = new Telerik.WinControls.UI.RadLabel();
             this.txtProd = new System.Windows.Forms.TextBox();
-            this.btnProd = new Telerik.WinControls.UI.RadButton();
             this.radLabel16 = new Telerik.WinControls.UI.RadLabel();
             this.radScrollablePanel4 = new Telerik.WinControls.UI.RadScrollablePanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -78,7 +77,6 @@ namespace SGPAPP
             this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
             this.txtComment = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
             this.txtCliente = new System.Windows.Forms.TextBox();
@@ -86,6 +84,8 @@ namespace SGPAPP
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.btnProd = new Telerik.WinControls.UI.RadButton();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radScrollablePanel1)).BeginInit();
             this.radScrollablePanel1.PanelContainer.SuspendLayout();
             this.radScrollablePanel1.SuspendLayout();
@@ -109,7 +109,6 @@ namespace SGPAPP
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radScrollablePanel4)).BeginInit();
             this.radScrollablePanel4.PanelContainer.SuspendLayout();
@@ -120,11 +119,12 @@ namespace SGPAPP
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnProd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // radScrollablePanel1
@@ -537,19 +537,6 @@ namespace SGPAPP
             this.txtProd.TabIndex = 6;
             this.txtProd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProd_KeyPress);
             // 
-            // btnProd
-            // 
-            this.btnProd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProd.Image = ((System.Drawing.Image)(resources.GetObject("btnProd.Image")));
-            this.btnProd.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnProd.Location = new System.Drawing.Point(579, 59);
-            this.btnProd.Name = "btnProd";
-            this.btnProd.Size = new System.Drawing.Size(32, 32);
-            this.btnProd.TabIndex = 145;
-            this.btnProd.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProd.ThemeName = "Office2013Light";
-            this.btnProd.Click += new System.EventHandler(this.radButton2_Click);
-            // 
             // radLabel16
             // 
             this.radLabel16.BackColor = System.Drawing.Color.Transparent;
@@ -733,18 +720,6 @@ namespace SGPAPP
             this.tableLayoutPanel5.Size = new System.Drawing.Size(571, 72);
             this.tableLayoutPanel5.TabIndex = 158;
             // 
-            // radButton1
-            // 
-            this.radButton1.Image = ((System.Drawing.Image)(resources.GetObject("radButton1.Image")));
-            this.radButton1.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radButton1.Location = new System.Drawing.Point(231, 39);
-            this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(34, 30);
-            this.radButton1.TabIndex = 146;
-            this.radButton1.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            this.radButton1.ThemeName = "Office2013Light";
-            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
-            // 
             // txtMonto
             // 
             this.txtMonto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -813,30 +788,55 @@ namespace SGPAPP
             this.radGridView1.MasterTemplate.AllowAddNewRow = false;
             this.radGridView1.MasterTemplate.AllowDeleteRow = false;
             this.radGridView1.MasterTemplate.AllowEditRow = false;
-            gridViewTextBoxColumn11.HeaderText = "Codigo";
-            gridViewTextBoxColumn11.Name = "Codigo";
-            gridViewTextBoxColumn12.HeaderText = "Descripcion";
-            gridViewTextBoxColumn12.Name = "Descripcion";
-            gridViewTextBoxColumn13.HeaderText = "Cant.";
-            gridViewTextBoxColumn13.Name = "Cant";
-            gridViewTextBoxColumn14.HeaderText = "Precio Unit.";
-            gridViewTextBoxColumn14.Name = "Precio Unit";
-            gridViewTextBoxColumn15.HeaderText = "Importe";
-            gridViewTextBoxColumn15.Name = "Importe";
+            gridViewTextBoxColumn1.HeaderText = "Codigo";
+            gridViewTextBoxColumn1.Name = "Codigo";
+            gridViewTextBoxColumn2.HeaderText = "Descripcion";
+            gridViewTextBoxColumn2.Name = "Descripcion";
+            gridViewTextBoxColumn3.HeaderText = "Cant.";
+            gridViewTextBoxColumn3.Name = "Cant";
+            gridViewTextBoxColumn4.HeaderText = "Precio Unit.";
+            gridViewTextBoxColumn4.Name = "Precio Unit";
+            gridViewTextBoxColumn5.HeaderText = "Importe";
+            gridViewTextBoxColumn5.Name = "Importe";
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12,
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14,
-            gridViewTextBoxColumn15});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5});
             this.radGridView1.MasterTemplate.EnableFiltering = true;
             this.radGridView1.MasterTemplate.EnableGrouping = false;
-            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition3;
+            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.Size = new System.Drawing.Size(588, 253);
             this.radGridView1.TabIndex = 147;
             this.radGridView1.ThemeName = "Office2013Light";
             this.radGridView1.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.radGridView1_CellFormatting);
+            // 
+            // btnProd
+            // 
+            this.btnProd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProd.Image = ((System.Drawing.Image)(resources.GetObject("btnProd.Image")));
+            this.btnProd.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnProd.Location = new System.Drawing.Point(579, 59);
+            this.btnProd.Name = "btnProd";
+            this.btnProd.Size = new System.Drawing.Size(32, 32);
+            this.btnProd.TabIndex = 145;
+            this.btnProd.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnProd.ThemeName = "Office2013Light";
+            this.btnProd.Click += new System.EventHandler(this.radButton2_Click);
+            // 
+            // radButton1
+            // 
+            this.radButton1.Image = ((System.Drawing.Image)(resources.GetObject("radButton1.Image")));
+            this.radButton1.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radButton1.Location = new System.Drawing.Point(231, 39);
+            this.radButton1.Name = "radButton1";
+            this.radButton1.Size = new System.Drawing.Size(34, 30);
+            this.radButton1.TabIndex = 146;
+            this.radButton1.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radButton1.ThemeName = "Office2013Light";
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // frmFacturacion
             // 
@@ -875,7 +875,6 @@ namespace SGPAPP
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnProd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).EndInit();
             this.radScrollablePanel4.PanelContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radScrollablePanel4)).EndInit();
@@ -889,11 +888,12 @@ namespace SGPAPP
             ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnProd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             this.ResumeLayout(false);
 
         }

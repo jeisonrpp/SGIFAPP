@@ -37,25 +37,35 @@ namespace SGPAPP
             GridViewRowInfo row = radGridView1.CurrentRow;
             if (Consulta == "Facturacion")
             {
-                print.FactCod = e.Row.Cells[0].Value.ToString();
-                printDocument1 = new PrintDocument();
-                PrinterSettings ps = new PrinterSettings();
-                printDocument1.PrinterSettings = ps;
-                printDocument1.PrintPage += print.Imprimir;
-                //ps.PrinterName = "Nitro PDF Creator";
-                ps.PrinterName = "80mm Series Printer";
-                printDocument1.Print();
+                if (e.Row.Cells[11].Value.ToString() != "Anulado")
+                {
+                    clsPrinterSet printerset = new clsPrinterSet();
+                    print.GetPrinter();
+                    String Printer = printerset.Printer;
+                    print.FactCod = e.Row.Cells[0].Value.ToString();
+                    printDocument1 = new PrintDocument();
+                    PrinterSettings ps = new PrinterSettings();
+                    printDocument1.PrinterSettings = ps;
+                    printDocument1.PrintPage += print.Imprimir;
+                    //ps.PrinterName = "Nitro PDF Creator";
+                    ps.PrinterName = Printer;
+                    printDocument1.Print();
 
 
-                string GS = Convert.ToString((char)29);
-                string ESC = Convert.ToString((char)27);
+                    string GS = Convert.ToString((char)29);
+                    string ESC = Convert.ToString((char)27);
 
-                string COMMAND = "";
-                COMMAND = ESC + "@";
-                COMMAND += GS + "V" + (char)1;
-                RawPrinterHelper.SendStringToPrinter(ps.PrinterName = "LR2000", COMMAND);
+                    string COMMAND = "";
+                    COMMAND = ESC + "@";
+                    COMMAND += GS + "V" + (char)1;
+                    //RawPrinterHelper.SendStringToPrinter(ps.PrinterName = Printer, COMMAND);
 
-               // GetDataFact();
+                    // GetDataFact();
+                }
+                else
+                {
+                    MessageBox.Show("Esta factura ha sido anulada, no puede ser reimpresa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             if (Consulta == "Caja")
             {
@@ -81,6 +91,7 @@ namespace SGPAPP
             Consulta = "Facturacion";
             if (Consulta == "Facturacion")
             {
+                btnAnular.Visible = true;
                 this.Text = "Consulta Facturacion";
                 GetDataFact();
             }
@@ -126,7 +137,7 @@ namespace SGPAPP
                     }
                     if (radGridView1.Columns[0].Name == "CommandColumn2")
                     {
-                        radGridView1.Columns.Move(0, 10);
+                        radGridView1.Columns.Move(0, 12);
                     }
                     con.Close();
                 }
@@ -277,5 +288,36 @@ namespace SGPAPP
             }
 
             }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            int rowIndex = radGridView1.CurrentCell.RowIndex;
+            DialogResult resulta = MessageBox.Show("Seguro que desea Anular la factura: "+ this.radGridView1.Rows[rowIndex].Cells["Codigo Factura"].Value + "?", "Anular Factura", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resulta == DialogResult.Yes)
+            {
+                using (var con = new SqlConnection(conect))
+                {
+                    try
+                    {
+                        string sql = "update tbfacturado set factstatus = 'Anulado' where factcodigo = '" + this.radGridView1.Rows[rowIndex].Cells["Codigo Factura"].Value + "'";
+
+                        SqlCommand cmd = new SqlCommand(sql, con);
+                        cmd.CommandType = CommandType.Text;
+                        con.Open();
+
+                        int i = cmd.ExecuteNonQuery();
+                        if (i > 0)
+                            MessageBox.Show("Factura anulada correctamente", "Anular Factura", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        con.Close();
+                    }
+                }
+            }
+            // = e.Row.Cells[0].Value.ToString();
+        }
     }
 }
