@@ -372,5 +372,113 @@ namespace SGPAPP
             cargacbbModelos();
             cbbModelo.Enabled = true;
         }
+
+        private void txtCod_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                txtSerial.Focus();
+            }
+        }
+
+        private void txtSerial_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                cbbMarca.Focus();
+            }
+        }
+
+        private void cbbMarca_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                cbbModelo.Focus();
+            }
+        }
+
+        private void cbbModelo_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                cbbCategoria.Focus();
+            }
+        }
+
+        private void cbbCategoria_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                cbbProveedor.Focus();
+            }
+        }
+
+        private void cbbProveedor_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                txtDesc.Focus();
+            }
+        }
+
+        private void txtDesc_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                txtCompra.Focus();
+            }
+        }
+
+        private void txtCompra_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                txtVenta.Focus();
+            }
+        }
+
+        private void txtVenta_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                txtStock.Focus();
+            }
+        }
+
+        private void txtStock_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                txtComment.Focus();
+            }
+        }
+
+        private void txtComment_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                btnGuardar.Focus();
+            }
+        }
+
+        private void btnGuardar_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                btnCancelar.Focus();
+            }
+        }
     }
 }

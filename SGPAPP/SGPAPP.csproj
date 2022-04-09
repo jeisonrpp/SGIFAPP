@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>E:\SGFI\</PublishUrl>
+    <PublishUrl>d:\SGFI\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -21,14 +21,14 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>true</UpdateRequired>
+    <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://mastertechdo.sytes.net/SGFI/</InstallUrl>
     <UpdateUrl>http://mastertechdo.sytes.net/SGFI/</UpdateUrl>
     <ProductName>SGPAPP</ProductName>
     <PublisherName>JP</PublisherName>
     <SuiteName>SGPAPP</SuiteName>
-    <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.2</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <ApplicationRevision>4</ApplicationRevision>
@@ -58,10 +58,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>BCAF8386F8C916FFFB6D9D8612052571B022BD91</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2DB2EF1B870A792D1E1B74A1238773210836AAD1</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>SGPAPP_4_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>SGPAPP_5_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -456,6 +456,7 @@
     <None Include="SGPAPP_2_TemporaryKey.pfx" />
     <None Include="SGPAPP_3_TemporaryKey.pfx" />
     <None Include="SGPAPP_4_TemporaryKey.pfx" />
+    <None Include="SGPAPP_5_TemporaryKey.pfx" />
     <None Include="SGPAPP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

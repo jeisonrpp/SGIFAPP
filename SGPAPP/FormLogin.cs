@@ -178,12 +178,12 @@ namespace SGPAPP
                     txtUser.Focus();
                     return;
                 }
-                //if (txtPass.Text == "")
-                //{
-                //    MessageBox.Show("Porfavor, digite la contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    txtPass.Focus();
-                //    return;
-                //}
+                if (txtPass.Text == "")
+                {
+                    MessageBox.Show("Porfavor, digite la contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPass.Focus();
+                    return;
+                }
                 using (var con = new SqlConnection(conect))
                 {
                     string sql = "SELECT (uNombre) as [Nombre], (uCedula) as [Ced], (uUser) as [User], (uPassword) as [Pass], (uLevel) as [Level], (uStatus) as [Status], (uSalt) as [Salt],(uID) as [ID] FROM tbUsuarios WHERE uUser = '" + txtUser.Text + "' ";

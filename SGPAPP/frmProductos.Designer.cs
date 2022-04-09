@@ -133,6 +133,7 @@ namespace SGPAPP
             this.cbbCategoria.Name = "cbbCategoria";
             this.cbbCategoria.Size = new System.Drawing.Size(203, 27);
             this.cbbCategoria.TabIndex = 5;
+            this.cbbCategoria.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cbbCategoria_PreviewKeyDown);
             // 
             // tableLayoutPanel7
             // 
@@ -165,6 +166,7 @@ namespace SGPAPP
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size(501, 26);
             this.txtComment.TabIndex = 11;
+            this.txtComment.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtComment_PreviewKeyDown);
             // 
             // tableLayoutPanel6
             // 
@@ -195,6 +197,7 @@ namespace SGPAPP
             this.txtVenta.Name = "txtVenta";
             this.txtVenta.Size = new System.Drawing.Size(135, 26);
             this.txtVenta.TabIndex = 9;
+            this.txtVenta.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtVenta_PreviewKeyDown);
             // 
             // label9
             // 
@@ -202,9 +205,9 @@ namespace SGPAPP
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(5, 14);
+            this.label9.Location = new System.Drawing.Point(6, 14);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(124, 16);
+            this.label9.Size = new System.Drawing.Size(123, 16);
             this.label9.TabIndex = 127;
             this.label9.Text = "Precio de Venta: ";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -242,6 +245,7 @@ namespace SGPAPP
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(149, 26);
             this.txtStock.TabIndex = 10;
+            this.txtStock.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtStock_PreviewKeyDown);
             // 
             // txtCompra
             // 
@@ -254,6 +258,7 @@ namespace SGPAPP
             this.txtCompra.Name = "txtCompra";
             this.txtCompra.Size = new System.Drawing.Size(149, 26);
             this.txtCompra.TabIndex = 8;
+            this.txtCompra.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtCompra_PreviewKeyDown);
             // 
             // tableLayoutPanel4
             // 
@@ -288,6 +293,7 @@ namespace SGPAPP
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(501, 26);
             this.txtDesc.TabIndex = 7;
+            this.txtDesc.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtDesc_PreviewKeyDown);
             // 
             // cbbProveedor
             // 
@@ -303,6 +309,7 @@ namespace SGPAPP
             this.cbbProveedor.Name = "cbbProveedor";
             this.cbbProveedor.Size = new System.Drawing.Size(501, 27);
             this.cbbProveedor.TabIndex = 6;
+            this.cbbProveedor.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cbbProveedor_PreviewKeyDown);
             // 
             // tableLayoutPanel3
             // 
@@ -337,6 +344,7 @@ namespace SGPAPP
             this.cbbModelo.Name = "cbbModelo";
             this.cbbModelo.Size = new System.Drawing.Size(203, 27);
             this.cbbModelo.TabIndex = 4;
+            this.cbbModelo.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cbbModelo_PreviewKeyDown);
             // 
             // label2
             // 
@@ -344,9 +352,9 @@ namespace SGPAPP
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(16, 16);
+            this.label2.Location = new System.Drawing.Point(17, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 16);
+            this.label2.Size = new System.Drawing.Size(59, 16);
             this.label2.TabIndex = 115;
             this.label2.Text = "Modelo:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -386,6 +394,7 @@ namespace SGPAPP
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(213, 26);
             this.txtCod.TabIndex = 1;
+            this.txtCod.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtCod_PreviewKeyDown);
             // 
             // txtSerial
             // 
@@ -398,6 +407,7 @@ namespace SGPAPP
             this.txtSerial.Name = "txtSerial";
             this.txtSerial.Size = new System.Drawing.Size(209, 26);
             this.txtSerial.TabIndex = 2;
+            this.txtSerial.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtSerial_PreviewKeyDown);
             // 
             // cbbMarca
             // 
@@ -414,6 +424,7 @@ namespace SGPAPP
             this.cbbMarca.Size = new System.Drawing.Size(203, 27);
             this.cbbMarca.TabIndex = 3;
             this.cbbMarca.SelectedIndexChanged += new System.EventHandler(this.cbbMarca_SelectedIndexChanged);
+            this.cbbMarca.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cbbMarca_PreviewKeyDown);
             // 
             // tableLayoutPanel1
             // 
@@ -451,9 +462,9 @@ namespace SGPAPP
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(5, 15);
+            this.label1.Location = new System.Drawing.Point(6, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 16);
+            this.label1.Size = new System.Drawing.Size(142, 16);
             this.label1.TabIndex = 103;
             this.label1.Text = "Codigo de Producto:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -464,9 +475,9 @@ namespace SGPAPP
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(93, 62);
+            this.label8.Location = new System.Drawing.Point(94, 62);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 16);
+            this.label8.Size = new System.Drawing.Size(54, 16);
             this.label8.TabIndex = 108;
             this.label8.Text = "Serial: ";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -477,9 +488,9 @@ namespace SGPAPP
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(94, 109);
+            this.label3.Location = new System.Drawing.Point(95, 109);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 16);
+            this.label3.Size = new System.Drawing.Size(53, 16);
             this.label3.TabIndex = 105;
             this.label3.Text = "Marca:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -490,9 +501,9 @@ namespace SGPAPP
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(71, 156);
+            this.label4.Location = new System.Drawing.Point(72, 156);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 16);
+            this.label4.Size = new System.Drawing.Size(76, 16);
             this.label4.TabIndex = 117;
             this.label4.Text = "Categoria:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -503,9 +514,9 @@ namespace SGPAPP
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(55, 392);
+            this.label11.Location = new System.Drawing.Point(56, 392);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 16);
+            this.label11.Size = new System.Drawing.Size(92, 16);
             this.label11.TabIndex = 130;
             this.label11.Text = "Comentario: ";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -516,9 +527,9 @@ namespace SGPAPP
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(63, 203);
+            this.label5.Location = new System.Drawing.Point(64, 203);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 16);
+            this.label5.Size = new System.Drawing.Size(84, 16);
             this.label5.TabIndex = 120;
             this.label5.Text = "Proveedor: ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -529,9 +540,9 @@ namespace SGPAPP
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(54, 250);
+            this.label6.Location = new System.Drawing.Point(55, 250);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 16);
+            this.label6.Size = new System.Drawing.Size(93, 16);
             this.label6.TabIndex = 122;
             this.label6.Text = "Descripcion: ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -542,9 +553,9 @@ namespace SGPAPP
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(91, 344);
+            this.label10.Location = new System.Drawing.Point(92, 344);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 16);
+            this.label10.Size = new System.Drawing.Size(56, 16);
             this.label10.TabIndex = 129;
             this.label10.Text = "Stock: ";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -555,9 +566,9 @@ namespace SGPAPP
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(14, 297);
+            this.label7.Location = new System.Drawing.Point(15, 297);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 16);
+            this.label7.Size = new System.Drawing.Size(133, 16);
             this.label7.TabIndex = 125;
             this.label7.Text = "Precio de Compra: ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -582,6 +593,7 @@ namespace SGPAPP
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.ThemeName = "Office2013Light";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnGuardar.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.btnGuardar_PreviewKeyDown);
             // 
             // frmProductos
             // 
