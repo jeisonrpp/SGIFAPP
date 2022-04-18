@@ -7,8 +7,10 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.Export;
@@ -39,28 +41,56 @@ namespace SGPAPP
             {
                 if (e.Row.Cells[11].Value.ToString() != "Anulado")
                 {
-                    clsPrinterSet printerset = new clsPrinterSet();
-                    print.GetPrinter();
-                    String Printer = printerset.Printer;
-                    print.FactCod = e.Row.Cells[0].Value.ToString();
-                    printDocument1 = new PrintDocument();
-                    PrinterSettings ps = new PrinterSettings();
-                    printDocument1.PrinterSettings = ps;
-                    printDocument1.PrintPage += print.Imprimir;
-                    //ps.PrinterName = "Nitro PDF Creator";
-                    ps.PrinterName = Printer;
-                    printDocument1.Print();
+                    frmMensaje msg = new frmMensaje();
+                    msg.ShowDialog();
+
+                    if (msg.DialogResult == DialogResult.OK)
+                    {
+                        clsPrinterSet printerset = new clsPrinterSet();
+                        print.GetPrinter();
+                        String Printer = printerset.Printer;
+                        print.FactCod = e.Row.Cells[0].Value.ToString();
+                        printDocument1 = new PrintDocument();
+                        PrinterSettings ps = new PrinterSettings();
+                        printDocument1.PrinterSettings = ps;
+                        printDocument1.PrintPage += print.Imprimir;
+                        //ps.PrinterName = "Nitro PDF Creator";
+                        ps.PrinterName = Printer;
+                        printDocument1.Print();
 
 
-                    string GS = Convert.ToString((char)29);
-                    string ESC = Convert.ToString((char)27);
+                        string GS = Convert.ToString((char)29);
+                        string ESC = Convert.ToString((char)27);
 
-                    string COMMAND = "";
-                    COMMAND = ESC + "@";
-                    COMMAND += GS + "V" + (char)1;
-                    //RawPrinterHelper.SendStringToPrinter(ps.PrinterName = Printer, COMMAND);
+                        string COMMAND = "";
+                        COMMAND = ESC + "@";
+                        COMMAND += GS + "V" + (char)1;
+                        //RawPrinterHelper.SendStringToPrinter(ps.PrinterName = Printer, COMMAND);
 
-                    // GetDataFact();
+                        // GetDataFact();
+                    }
+                    if (msg.DialogResult == DialogResult.Yes)
+                    {
+                        clsPrinterSet printerset = new clsPrinterSet();
+                        print.GetPrinter();
+                        String Printer = printerset.Printer;
+                        print.FactCod = e.Row.Cells[0].Value.ToString();
+                        printDocument1 = new PrintDocument();
+                        PrinterSettings ps = new PrinterSettings();
+                        printDocument1.PrinterSettings = ps;
+                        printDocument1.PrintPage += print.Imprimir;
+                        ps.PrinterName = "Microsoft Print to PDF";
+                        string file = print.FactCod;
+                        string directory = "C:\\SGP\\";
+                        ps.PrintToFile = true;
+                        ps.PrintFileName = Path.Combine(directory, file + ".pdf");
+                        printDocument1.Print();
+                        Thread.Sleep(2000);
+                        Process prc = new Process();
+                        prc.StartInfo.FileName = Path.Combine(directory, file + ".pdf");
+                        prc.Start();
+                    }
+                  
                 }
                 else
                 {

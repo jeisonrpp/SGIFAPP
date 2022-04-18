@@ -56,7 +56,7 @@ namespace SGPAPP
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 23);
             this.button2.TabIndex = 6;
-            this.button2.Text = "Asignar Prueba";
+            this.button2.Text = "Imprimir Factura";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -67,7 +67,7 @@ namespace SGPAPP
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 23);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Asignar Cita";
+            this.button1.Text = "Ver Factura";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -75,11 +75,11 @@ namespace SGPAPP
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
-            this.label1.Location = new System.Drawing.Point(27, 39);
+            this.label1.Location = new System.Drawing.Point(62, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(266, 16);
+            this.label1.Size = new System.Drawing.Size(206, 16);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Desea asignar prueba o cita al paciente?";
+            this.label1.Text = "Desea imprimir o ver la factura?";
             // 
             // frmMensaje
             // 
@@ -91,7 +91,9 @@ namespace SGPAPP
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "frmMensaje";
-            this.Text = "frmMensaje";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Facturas";
+            this.Load += new System.EventHandler(this.frmMensaje_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

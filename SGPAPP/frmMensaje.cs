@@ -16,5 +16,10 @@ namespace SGPAPP
         {
             InitializeComponent();
         }
+
+        private void frmMensaje_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
