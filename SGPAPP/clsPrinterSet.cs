@@ -8,8 +8,8 @@ namespace SGPAPP
 {
     public class clsPrinterSet
     {
-    public String Printer { get; set; }
-    public String Hostname { get; set; }
+    public static string Printer { get; set; }
+    public static string Hostname { get; set; }
 
     public static List<clsPrinterSet> PrinterSettings = new List<clsPrinterSet>();
 }

@@ -46,11 +46,12 @@ namespace SGPAPP
 
                     using (SqlDataReader leer = comand.ExecuteReader())
                     {
-                        while (leer.Read() == true)
+                        if (leer.Read())
                         {
-                            clsPrinterSet item = new clsPrinterSet();
-                            item.Printer = leer.GetString(1);
-                            item.Hostname = leer.GetString(2);
+                            //clsPrinterSet item = new clsPrinterSet();
+                            clsPrinterSet.Printer = leer[1].ToString();
+                            clsPrinterSet.Hostname = leer[2].ToString();
+                            
                         }
                     }
                 }

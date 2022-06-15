@@ -46,9 +46,9 @@ namespace SGPAPP
 
                     if (msg.DialogResult == DialogResult.OK)
                     {
-                        clsPrinterSet printerset = new clsPrinterSet();
+                        //clsPrinterSet printerset = new clsPrinterSet();
                         print.GetPrinter();
-                        String Printer = printerset.Printer;
+                        String Printer = clsPrinterSet.Printer;
                         print.FactCod = e.Row.Cells[0].Value.ToString();
                         printDocument1 = new PrintDocument();
                         PrinterSettings ps = new PrinterSettings();
@@ -71,9 +71,9 @@ namespace SGPAPP
                     }
                     if (msg.DialogResult == DialogResult.Yes)
                     {
-                        clsPrinterSet printerset = new clsPrinterSet();
+                        //clsPrinterSet printerset = new clsPrinterSet();
                         print.GetPrinter();
-                        String Printer = printerset.Printer;
+                        String Printer = clsPrinterSet.Printer;
                         print.FactCod = e.Row.Cells[0].Value.ToString();
                         printDocument1 = new PrintDocument();
                         PrinterSettings ps = new PrinterSettings();

@@ -399,9 +399,9 @@ namespace SGPAPP
                             GetID();
                             Facturar();
                             Ventas();
-                            clsPrinterSet printerset = new clsPrinterSet();
+                            //clsPrinterSet printerset = new clsPrinterSet();
                             print.GetPrinter();
-                            String Printer = printerset.Printer;
+                            String Printer = clsPrinterSet.Printer;
                             print.FactCod = FacturaID;
                             printDocument1 = new PrintDocument();
                             PrinterSettings ps = new PrinterSettings();
